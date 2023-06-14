@@ -11,4 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
     Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable);
+
+    //This is the same as using. SELECT * FROM Product p WHERE p.name LIKE CONCAT('%', :name , '%')
+    Page<Product> findByNameContaining(@Param("name") String name, Pageable pageable);
 }

@@ -43,6 +43,13 @@ export class ProductService {
     );
   }
 
+    getProduct(theProductId: number):Observable<Product> {
+    //The template literal ${this.baseUrl}/${theProductId}
+      // combines the value of this.baseUrl and theProductId to form the URL for the GET request.
+    const productUrl = `${this.baseUrl}/${theProductId}`;
+
+    return this.httpClient.get<Product>(productUrl);
+    }
 }
 
 interface GetResponseProducts {

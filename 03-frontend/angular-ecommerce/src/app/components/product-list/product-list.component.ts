@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from 'src/app/services/product.service';
 import {Product} from 'src/app/common/product';
 import {ActivatedRoute} from '@angular/router';
+import {CartItem} from "../../common/cart-item";
+import {CartService} from "../../services/cart.service";
 
 @Component({
     selector: 'app-product-list',
@@ -24,6 +26,7 @@ export class ProductListComponent implements OnInit {
     previousKeyword: string = '';
 
     constructor(private productService: ProductService,
+                private cartService: CartService,
                 private route: ActivatedRoute) {
     }
 
@@ -105,5 +108,12 @@ export class ProductListComponent implements OnInit {
             this.thePageSize = data.page.size;
             this.theTotalElements = data.page.totalElements;
         }
+    }
+    addToCart(theProduct : Product){
+        console.log(`Adding to cart: ${theProduct.name}, ${theProduct.unitPrice}`);
+
+        const  theCartItem = new CartItem(theProduct);
+
+        this.cartService.addToCart(theCartItem);
     }
 }

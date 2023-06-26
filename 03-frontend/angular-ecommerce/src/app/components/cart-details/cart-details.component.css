@@ -1,0 +1,25 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background: linear-gradient(90deg, #ffffff,#0da8e4);
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-radius: 6px;
+}
+
+.table tr:hover {
+    background-color: #ffffff;
+}
+
+.column-width-20 {
+    width: 20%;
+}
+
+.column-width-50 {
+    width: 50%;
+}

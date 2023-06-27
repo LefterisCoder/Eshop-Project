@@ -4,7 +4,7 @@
 }
 
 .table th {
-    background: linear-gradient(90deg, #ffffff,#0da8e4);
+    background: linear-gradient(90deg, #ffffff, #0da8e4);
     color: #000000;
     font-weight: bold;
     padding: 10px;
@@ -22,4 +22,8 @@
 
 .column-width-50 {
     width: 50%;
+}
+
+.red-color {
+    color: red;
 }

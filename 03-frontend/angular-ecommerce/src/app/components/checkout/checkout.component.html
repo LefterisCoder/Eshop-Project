@@ -11,6 +11,18 @@
                       <div class="col-md-9">
                           <div class="input-space">
                               <input formControlName="firstName" type="text">
+
+                              <div *ngIf="firstname && firstname.invalid && (firstname.dirty|| firstname.touched)" class="alert alert-danger mt-1">
+
+                                  <div *ngIf="firstname.errors?.['required'] || firstname.errors?.['notOnlyWhitespace']">
+                                      First Name is required
+                                  </div>
+
+                                  <div *ngIf="firstname.errors?.['minlength']">
+                                      First name be at least 2 characters
+                                  </div>
+
+                              </div>
                           </div>
                       </div>
                   </div>
@@ -20,6 +32,18 @@
                       <div class="col-md-9">
                           <div class="input-space">
                               <input formControlName="lastName" type="text">
+                              <div *ngIf="lastname && lastname.invalid && (lastname.dirty|| lastname.touched)" class="alert alert-danger mt-1">
+
+                                  <div *ngIf="lastname.errors?.['required'] || lastname.errors?.['notOnlyWhitespace']">
+                                      Last Name is required
+                                  </div>
+
+                                  <div *ngIf="lastname.errors?.['minlength']">
+                                      Last Name be at least 2 characters
+                                  </div>
+
+                              </div>
+
                           </div>
                       </div>
                   </div>
@@ -29,6 +53,17 @@
                       <div class="col-md-9">
                           <div class="input-space">
                               <input formControlName="email" type="text">
+                              <div *ngIf="email && email.invalid && (email.dirty|| email.touched)" class="alert alert-danger mt-1">
+
+                                  <div *ngIf="email.errors?.['required']">
+                                      Email is required
+                                  </div>
+
+                                  <div *ngIf="email.errors?.['pattern']">
+                                      Email must have the correct Format
+                                  </div>
+
+                              </div>
                           </div>
                       </div>
                   </div>

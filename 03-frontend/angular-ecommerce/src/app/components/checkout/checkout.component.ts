@@ -4,6 +4,7 @@ import {CodeVerseFormService} from "../../services/code-verse-form.service";
 import {Country} from "../../common/country";
 import {State} from "../../common/state";
 import {CodeVerseValidators} from "../../validatorts/code-verse-validators";
+import {CartService} from "../../services/cart.service";
 
 @Component({
     selector: 'app-checkout',
@@ -24,10 +25,13 @@ export class CheckoutComponent implements OnInit {
     billingAddressStates: State[] = [];
 
     constructor(private formBuilder: FormBuilder,
-                private codeVerseService: CodeVerseFormService) {
+                private codeVerseService: CodeVerseFormService,
+                private cartService:CartService) {
     }
 
     ngOnInit(): void {
+
+        this.reviewCartDetails();
 
         this.checkoutFormGroup = this.formBuilder.group({
             customer: this.formBuilder.group({
@@ -201,6 +205,18 @@ export class CheckoutComponent implements OnInit {
                 // @ts-ignore
                 formGroup?.get('state').setValue(data[0]);
             }
+        );
+    }
+
+    private reviewCartDetails() {
+        //subscribe to cartService.totalQuantity
+        this.cartService.totalQuantity.subscribe(
+            totalQuantity => this.totalQuantity = totalQuantity
+        );
+
+        //
+        this.cartService.totalPrice.subscribe(
+            totalPrice => this.totalPrice = totalPrice
         );
     }
 }

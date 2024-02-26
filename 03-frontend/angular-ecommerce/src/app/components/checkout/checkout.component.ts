@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 import {Order} from "../../common/order";
 import {OrderItem} from "../../common/order-item";
 import {Purchase} from "../../common/purchase";
-import {error} from "@angular/compiler-cli/src/transformers/util";
+import Swal from "sweetalert2";
 
 @Component({
     selector: 'app-checkout',
@@ -211,17 +211,26 @@ export class CheckoutComponent implements OnInit {
         this.checkoutService.placeOrder(purchase).subscribe(
             {
                 next: response => {
-                    alert(`Your order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`);
+                    Swal.fire({
+                        title: 'Order Placed!',
+                        text: `Your order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`,
+                        icon: 'success',
+                        confirmButtonText: 'Okay'
+                    });
 
                     //reset Cart
                     this.resetCart();
                 },
                 error: err => {
-                    alert(`There was an error : ${err.message}`);
+                    Swal.fire({
+                        title: 'Error',
+                        text: `There was an error: ${err.message}`,
+                        icon: 'error',
+                        confirmButtonText: 'Okay'
+                    });
                 }
             }
-        )
-
+        );
     }
 
     handleMonthsAndYears() {

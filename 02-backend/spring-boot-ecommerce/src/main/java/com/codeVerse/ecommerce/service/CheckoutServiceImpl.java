@@ -1,11 +1,11 @@
-package com.luv2code.ecommerce.service;
+package com.codeVerse.ecommerce.service;
 
-import com.luv2code.ecommerce.dao.CustomerRepository;
-import com.luv2code.ecommerce.dto.Purchase;
-import com.luv2code.ecommerce.dto.PurchaseResponse;
-import com.luv2code.ecommerce.entity.Customer;
-import com.luv2code.ecommerce.entity.Order;
-import com.luv2code.ecommerce.entity.OrderItem;
+import com.codeVerse.ecommerce.dao.CustomerRepository;
+import com.codeVerse.ecommerce.dto.PurchaseResponse;
+import com.codeVerse.ecommerce.entity.Customer;
+import com.codeVerse.ecommerce.dto.Purchase;
+import com.codeVerse.ecommerce.entity.Order;
+import com.codeVerse.ecommerce.entity.OrderItem;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

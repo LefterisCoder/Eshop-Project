@@ -1,9 +1,9 @@
-package com.luv2code.ecommerce.config;
+package com.codeVerse.ecommerce.config;
 
-import com.luv2code.ecommerce.entity.Country;
-import com.luv2code.ecommerce.entity.Product;
-import com.luv2code.ecommerce.entity.ProductCategory;
-import com.luv2code.ecommerce.entity.State;
+import com.codeVerse.ecommerce.entity.Product;
+import com.codeVerse.ecommerce.entity.ProductCategory;
+import com.codeVerse.ecommerce.entity.Country;
+import com.codeVerse.ecommerce.entity.State;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -13,9 +13,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import javax.persistence.EntityManager;
 import javax.persistence.metamodel.EntityType;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {

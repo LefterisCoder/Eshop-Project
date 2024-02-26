@@ -1,4 +1,4 @@
-package com.luv2code.ecommerce.dto;
+package com.codeVerse.ecommerce.dto;
 
 import lombok.Data;
 import lombok.NonNull;

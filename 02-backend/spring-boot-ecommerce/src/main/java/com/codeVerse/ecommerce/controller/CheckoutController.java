@@ -1,8 +1,8 @@
-package com.luv2code.ecommerce.controller;
+package com.codeVerse.ecommerce.controller;
 
-import com.luv2code.ecommerce.dto.Purchase;
-import com.luv2code.ecommerce.dto.PurchaseResponse;
-import com.luv2code.ecommerce.service.CheckoutService;
+import com.codeVerse.ecommerce.dto.PurchaseResponse;
+import com.codeVerse.ecommerce.dto.Purchase;
+import com.codeVerse.ecommerce.service.CheckoutService;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("http://localhost:4200")

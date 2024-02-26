@@ -1,4 +1,4 @@
-package com.luv2code.ecommerce;
+package com.codeVerse.ecommerce;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
